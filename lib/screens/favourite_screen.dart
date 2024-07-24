@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tezda_assignment/config/colors.dart';
 import 'package:tezda_assignment/model/product_model.dart';
-import 'package:tezda_assignment/screens/product_detail_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
   final List<ProductModel> favoriteProducts;

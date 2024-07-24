@@ -14,14 +14,14 @@ class AuthServices {
       await FirebaseAuth.instance.currentUser!.verifyBeforeUpdateEmail(email);
       await FirestoreServices.saveUser(name, email, userCredential.user!.uid);
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Registration Successful')));
+          .showSnackBar(const SnackBar(content: Text('Registration Successful')));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Password Provided is too weak')));
+            const SnackBar(content: Text('Password Provided is too weak')));
       } else if (e.code == 'email-already-in-use') {
         ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Email Provided already Exists')));
+            const SnackBar(content: Text('Email Provided already Exists')));
       }
     } catch (e) {
       ScaffoldMessenger.of(context)
@@ -35,14 +35,14 @@ class AuthServices {
           .signInWithEmailAndPassword(email: email, password: password);
 
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('You are Logged in')));
+          .showSnackBar(const SnackBar(content: Text('You are Logged in')));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('No user Found with this Email')));
+            const SnackBar(content: Text('No user Found with this Email')));
       } else if (e.code == 'wrong-password') {
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text('Password did not match')));
+            .showSnackBar(const SnackBar(content: Text('Password did not match')));
       }
     }
   }

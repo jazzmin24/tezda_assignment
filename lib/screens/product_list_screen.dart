@@ -58,12 +58,12 @@ class _ProductListScreenState extends State<ProductListScreen> {
               size: 26.sp,
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProfileScreen(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => ProfileScreen(),
+              //   ),
+              // );
             },
           ),
           SizedBox(width: 10.w)
